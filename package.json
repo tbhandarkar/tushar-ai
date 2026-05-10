@@ -1,0 +1,31 @@
+{
+  "name": "tushar-ai-figma-plugin",
+  "version": "1.0.0",
+  "description": "A starter Figma plugin for Tushar AI.",
+  "private": true,
+  "main": "dist/code.js",
+  "scripts": {
+    "build": "npm run clean && esbuild src/code.ts --bundle --target=es2020 --outfile=dist/code.js && node scripts/copy-ui.mjs",
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tbhandarkar/tushar-ai.git"
+  },
+  "keywords": [
+    "figma",
+    "figma-plugin"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tbhandarkar/tushar-ai/issues"
+  },
+  "homepage": "https://github.com/tbhandarkar/tushar-ai#readme",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.125.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tushar AI</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: Inter, system-ui, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: var(--figma-color-bg);
+        color: var(--figma-color-text);
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.3;
+      }
+
+      p {
+        margin: 0;
+        color: var(--figma-color-text-secondary);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      textarea {
+        min-height: 96px;
+        resize: vertical;
+        border: 1px solid var(--figma-color-border);
+        border-radius: 8px;
+        padding: 10px;
+        background: var(--figma-color-bg-secondary);
+        color: var(--figma-color-text);
+        font: inherit;
+        font-size: 12px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .primary {
+        background: var(--figma-color-bg-brand);
+        color: var(--figma-color-text-onbrand);
+      }
+
+      .secondary {
+        background: var(--figma-color-bg-secondary);
+        color: var(--figma-color-text);
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+      }
+
+      .selection {
+        border: 1px solid var(--figma-color-border);
+        border-radius: 8px;
+        padding: 12px;
+        background: var(--figma-color-bg-secondary);
+      }
+
+      .selection h2 {
+        margin: 0 0 8px;
+        font-size: 12px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--figma-color-text-secondary);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Tushar AI</h1>
+        <p>A starter Figma plugin UI with selection awareness and a sample canvas action.</p>
+      </header>
+
+      <label>
+        Prompt
+        <textarea id="prompt">Summarize the selected design and suggest improvements.</textarea>
+      </label>
+
+      <div class="actions">
+        <button class="primary" id="create-note" type="button">Create note</button>
+        <button class="secondary" id="close" type="button">Close</button>
+      </div>
+
+      <section class="selection" aria-live="polite">
+        <h2>Current selection</h2>
+        <ul id="selection-list">
+          <li>No layers selected</li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      const promptInput = document.getElementById("prompt");
+      const selectionList = document.getElementById("selection-list");
+
+      document.getElementById("create-note").addEventListener("click", () => {
+        parent.postMessage(
+          {
+            pluginMessage: {
+              type: "create-note",
+              text: promptInput.value
+            }
+          },
+          "*"
+        );
+      });
+
+      document.getElementById("close").addEventListener("click", () => {
+        parent.postMessage({ pluginMessage: { type: "close" } }, "*");
+      });
+
+      window.onmessage = (event) => {
+        const message = event.data.pluginMessage;
+
+        if (!message || message.type !== "selection-summary") {
+          return;
+        }
+
+        selectionList.replaceChildren();
+
+        if (message.items.length === 0) {
+          const item = document.createElement("li");
+          item.textContent = "No layers selected";
+          selectionList.appendChild(item);
+          return;
+        }
+
+        for (const selected of message.items) {
+          const item = document.createElement("li");
+          item.textContent = `${selected.name} (${selected.type})`;
+          selectionList.appendChild(item);
+        }
+      };
+    </script>
+  </body>
+</html>
