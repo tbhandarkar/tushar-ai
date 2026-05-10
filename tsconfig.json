@@ -5,14 +5,11 @@
       "ES2020"
     ],
     "strict": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./node_modules/@figma"
-    ],
     "skipLibCheck": true,
     "noEmit": true
   },
   "include": [
+    "node_modules/@figma/plugin-typings/index.d.ts",
     "src/**/*.ts"
   ]
 }
