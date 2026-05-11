@@ -1,0 +1,112 @@
+# Tushar Bhandarkar — AI Portfolio
+# Cursor AI Rules
+
+## Project Overview
+Personal portfolio website for an AI practitioner. Static site built with Next.js 16, TypeScript, Tailwind CSS v4, and Framer Motion. Deployable to Vercel via `npm run build` → `out/` directory.
+
+## Tech Stack
+- **Framework**: Next.js 16+ with App Router, `output: 'export'` (static)
+- **Language**: TypeScript (strict mode — never use `any`)
+- **Styling**: Tailwind CSS v4 with CSS variables
+- **Animation**: Framer Motion (`useInView` for scroll triggers)
+- **Icons**: Lucide React (no `Github`/`Linkedin` — use `src/components/ui/SocialIcons.tsx`)
+- **Fonts**: Playfair Display (display/serif) + Lato (body) via `next/font/google`
+
+## Design System — Nature-Inspired Editorial
+
+### Colors (always use these exact values)
+```
+Background:       #0D1A0F   (deep forest)
+Surface/Cards:    #162418   (forest surface)
+Surface-2:        #1E2F20
+Accent green:     #4A7C59   (moss green) — primary CTAs, completed states
+Accent hover:     #3d6b4a
+Gold:             #C9A84C   — labels, logo dot, section eyebrows, ornaments
+Text primary:     #F0EBE0   (warm cream)
+Text secondary:   #9A9080   (warm sand/muted)
+Border:           rgba(201,168,76,0.10)  — standard
+Border strong:    rgba(201,168,76,0.25)  — hover/active
+Gold muted bg:    rgba(201,168,76,0.07)  — badge backgrounds
+```
+
+### Typography
+- **Display headings**: `style={{ fontFamily: "var(--font-display, Playfair Display, serif)" }}` — use `italic` and `font-bold`
+- **Section eyebrows**: `text-xs font-medium text-[#C9A84C] uppercase tracking-[0.2em]`
+- **Body text**: `text-[#9A9080] leading-[1.85]`
+- **Primary text**: `text-[#F0EBE0]`
+
+### Component Patterns
+- **Cards**: `bg-[#162418] border border-[rgba(201,168,76,0.10)] rounded-[12px]`
+- **Hover glow**: `hover:border-[rgba(201,168,76,0.30)] hover:shadow-[0_0_24px_rgba(74,124,89,0.10)]`
+- **Badges (muted)**: `bg-[rgba(201,168,76,0.07)] text-[#9A9080] border border-[rgba(201,168,76,0.12)]`
+- **Badges (accent)**: `bg-[#4A7C59]/15 text-[#7ab890] border border-[#4A7C59]/30`
+- **Badges (gold)**: `bg-[rgba(201,168,76,0.12)] text-[#C9A84C] border border-[rgba(201,168,76,0.25)]`
+- **Inputs**: `bg-[#162418] border border-[rgba(201,168,76,0.10)] focus:border-[rgba(201,168,76,0.35)]`
+
+### Ornamental details (nature-editorial feel)
+- Gold `✦` dividers between elements
+- Top/bottom section hairlines: `bg-gradient-to-r from-transparent via-[rgba(201,168,76,0.2)] to-transparent`
+- Subtle grid overlay in hero: `opacity-[0.025]`, 80px cell size
+
+## File Structure
+```
+src/
+├── app/
+│   ├── layout.tsx         # Fonts, metadata, JSON-LD
+│   ├── page.tsx           # Composes all 9 sections
+│   └── globals.css        # CSS variables + base styles
+├── components/
+│   ├── ui/
+│   │   ├── Button.tsx     # variants: primary (green), outline, ghost, gold
+│   │   ├── Card.tsx       # glow prop for hover state
+│   │   ├── Badge.tsx      # variants: accent, muted, gold
+│   │   ├── ProgressBar.tsx # animated on scroll
+│   │   └── SocialIcons.tsx # GithubIcon, LinkedinIcon (SVG — lucide has no social icons)
+│   ├── sections/          # Hero, About, Timeline, Projects, Skills, Resume, Roadmap, Contact
+│   └── layout/            # Navbar, Footer
+├── data/
+│   ├── projects.ts        # Add projects here — one object per project
+│   ├── skills.ts          # Skill categories + levels (0-100)
+│   └── timeline.ts        # 6-month journey nodes
+├── hooks/
+│   ├── useInView.ts       # Re-exports Framer Motion useInView
+│   └── useScrollProgress.ts
+└── lib/utils.ts           # cn() helper
+```
+
+## Code Conventions
+- **No inline styles** except `fontFamily` for display font variable
+- **All content in `src/data/`** — never hardcode content in components
+- **Framer Motion animations**: always use `useInView` with `{ once: true, margin: "-60px" }` for scroll triggers
+- **Section eyebrows**: always `text-xs font-medium text-[#C9A84C] uppercase tracking-[0.2em]` + `mb-2`
+- **Section headings**: always add `italic` class + `style={{ fontFamily: "var(--font-display...)" }}`
+- **Stagger animations**: use `delay: index * 0.1` pattern for grid items
+- **No `any` types** — write proper TypeScript interfaces
+- **No comments** unless the WHY is non-obvious
+
+## Adding a New Project
+Edit `src/data/projects.ts` — add one object to the array:
+```ts
+{
+  id: "unique-id",
+  title: "Project Title",
+  description: "What it does.",
+  tools: ["Claude", "Zapier"],
+  link: "https://...",
+  featured: true, // optional
+}
+```
+
+## Deployment
+```bash
+npm run build   # → out/ directory (static export)
+vercel --prod   # or push to GitHub → auto-deploy on Vercel
+```
+
+## DO NOT
+- Use `any` TypeScript type
+- Add inline styles (except font-family variable)
+- Use `Github` or `Linkedin` from lucide-react (not exported — use SocialIcons.tsx)
+- Hardcode content in components (use src/data/ files)
+- Use blue `#2563EB` anywhere — this design uses green `#4A7C59` + gold `#C9A84C`
+- Create new data files without updating the section component that reads them

@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0D1A0F;
+  --surface: #162418;
+  --surface-2: #1E2F20;
+  --accent: #4A7C59;
+  --accent-hover: #3d6b4a;
+  --gold: #C9A84C;
+  --gold-muted: rgba(201, 168, 76, 0.15);
+  --text-primary: #F0EBE0;
+  --text-secondary: #9A9080;
+  --border: rgba(201, 168, 76, 0.10);
+  --border-strong: rgba(201, 168, 76, 0.22);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-gold: var(--gold);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-border: var(--border);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Nature-inspired hero gradient */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse at 15% 60%, rgba(74, 124, 89, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(201, 168, 76, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(74, 124, 89, 0.08) 0%, transparent 60%),
+    var(--bg);
+}
+
+/* Organic paper texture overlay */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Accent pulse for roadmap */
+@keyframes accent-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 124, 89, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(74, 124, 89, 0); }
+}
+
+.accent-pulse {
+  animation: accent-pulse 2s ease-in-out infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.2);
+  border-radius: 3px;
+}

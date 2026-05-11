@@ -1,0 +1,57 @@
+---
+description: Rules for Tushar Bhandarkar AI Portfolio (Next.js + Tailwind + Framer Motion)
+globs: ["src/**/*.tsx", "src/**/*.ts", "src/**/*.css"]
+alwaysApply: true
+---
+
+# Portfolio Project Rules
+
+## Design System — Nature-Inspired Editorial
+
+Use ONLY these colors. Never use the old blue `#2563EB`.
+
+| Token | Value | Use |
+|-------|-------|-----|
+| Background | `#0D1A0F` | Page background |
+| Surface | `#162418` | Cards, inputs, mobile nav |
+| Accent green | `#4A7C59` | Primary buttons, completed dots, progress bars |
+| Gold | `#C9A84C` | Logo dot, eyebrow labels, ornaments, gold buttons |
+| Text primary | `#F0EBE0` | Headings, labels |
+| Text secondary | `#9A9080` | Body copy, placeholders |
+| Border | `rgba(201,168,76,0.10)` | Default borders |
+| Border hover | `rgba(201,168,76,0.25)` | Hover/focus borders |
+
+## Typography Rules
+
+- Display headings: Playfair Display via `style={{ fontFamily: "var(--font-display, Playfair Display, serif)" }}` + add `italic` Tailwind class
+- Section eyebrows (labels above headings): `text-xs font-medium text-[#C9A84C] uppercase tracking-[0.2em]`
+- Body copy: `text-[#9A9080] leading-[1.85]`
+
+## Animation Pattern
+
+All scroll-triggered animations must use:
+```tsx
+const ref = useRef(null);
+const inView = useInView(ref, { once: true, margin: "-60px" });
+// Then: animate={inView ? { opacity: 1, y: 0 } : {}}
+```
+
+## Icon Rules
+
+`lucide-react` does NOT export `Github` or `Linkedin`. Always import from:
+```tsx
+import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
+```
+
+## Content Rules
+
+All content (projects, skills, timeline data) lives in `src/data/`. Never hardcode content in components.
+
+## Component Imports
+
+```tsx
+import { Button } from "@/components/ui/Button";    // variants: primary, outline, ghost, gold
+import { Card } from "@/components/ui/Card";         // prop: glow={true} for hover effect
+import { Badge } from "@/components/ui/Badge";       // variants: accent, muted, gold
+import { ProgressBar } from "@/components/ui/ProgressBar"; // animated on scroll
+```
