@@ -2,8 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Download, Zap, Brain, Cloud, Users } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Zap, Brain, Cloud, Users } from "lucide-react";
 
 const highlights = [
   {
@@ -83,16 +82,6 @@ export default function Resume() {
           ))}
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.32 }}
-        >
-          <Button variant="gold" size="lg" onClick={() => window.open("/resume.pdf", "_blank")} aria-label="Download full resume PDF">
-            <Download size={18} />
-            Download Full Resume
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

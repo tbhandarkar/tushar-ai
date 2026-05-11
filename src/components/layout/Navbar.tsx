@@ -2,14 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Download } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Journey", href: "#journey" },
   { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -60,18 +57,6 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => window.open("/resume.pdf", "_blank")}
-              aria-label="Download resume"
-            >
-              <Download size={14} />
-              Resume
-            </Button>
-          </div>
-
           <button
             className="md:hidden text-[#F0EBE0] p-2"
             onClick={() => setMenuOpen((v) => !v)}
@@ -102,17 +87,6 @@ export default function Navbar() {
                   {link.label}
                 </button>
               ))}
-              <div className="pt-3">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full justify-center"
-                  onClick={() => { setMenuOpen(false); window.open("/resume.pdf", "_blank"); }}
-                >
-                  <Download size={14} />
-                  Download Resume
-                </Button>
-              </div>
             </nav>
           </motion.div>
         )}

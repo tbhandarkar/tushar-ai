@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowDown, Download, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 
@@ -87,10 +87,6 @@ export default function Hero() {
             <Button variant="primary" size="lg" onClick={scrollToProjects}>
               View Projects
               <ArrowDown size={16} />
-            </Button>
-            <Button variant="outline" size="lg" onClick={() => window.open("/resume.pdf", "_blank")}>
-              <Download size={16} />
-              Download Resume
             </Button>
           </motion.div>
 

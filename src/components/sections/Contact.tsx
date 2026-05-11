@@ -32,25 +32,6 @@ export default function Contact() {
         >
           Contact
         </motion.p>
-        <motion.h2
-          className="text-3xl sm:text-4xl font-bold text-[#F0EBE0] mb-4 italic"
-          style={{ fontFamily: "var(--font-display, Playfair Display, serif)" }}
-          initial={{ opacity: 0, y: 12 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.08 }}
-        >
-          Let&apos;s work together
-        </motion.h2>
-        <motion.p
-          className="text-[#9A9080] mb-10 leading-[1.8]"
-          initial={{ opacity: 0, y: 12 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.16 }}
-        >
-          I&apos;m actively looking for AI practitioner roles. If you have an opportunity,
-          want to collaborate, or just want to talk AI — drop me a message.
-        </motion.p>
-
         <motion.div
           className="flex flex-wrap gap-3 mb-10"
           initial={{ opacity: 0, y: 12 }}
