@@ -33,4 +33,13 @@ export const projects: Project[] = [
     tools: ["SuperJoin", "Plot AI", "Google AI Studio", "Hugging Face"],
     link: "#",
   },
+  {
+    id: "canswim-investment-strategy-tool",
+    title: "CANSWIM Investment Strategy Tool",
+    description:
+      "CANSWIM Investment turns complex market research into clean, decision-ready insights. Its AI-driven engine scores every stock across seven proven CAN SLIM factors and adapts instantly to real-time market conditions. Built for disciplined, self-directed investors, it highlights true leadership setups and filters out weak ideas fast. A smarter, faster way to manage your research pipeline.",
+    tools: ["AI Scoring", "CAN SLIM", "Market Research", "Stock Analysis"],
+    link: "#",
+    featured: true,
+  },
 ];
