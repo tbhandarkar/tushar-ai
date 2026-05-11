@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ExternalLink } from "lucide-react";
@@ -53,9 +54,11 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           </div>
 
           <div className="relative min-h-[220px] overflow-hidden border-t border-[rgba(201,168,76,0.10)] bg-[#0D1A0F] md:border-l md:border-t-0">
-            <img
+            <Image
               src={project.image.src}
               alt={project.image.alt}
+              width={1600}
+              height={900}
               className="h-full min-h-[220px] w-full object-cover object-left-top opacity-95 transition duration-500 group-hover:scale-[1.02]"
             />
           </div>
