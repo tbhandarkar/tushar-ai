@@ -5,6 +5,10 @@ export interface Project {
   tools: string[];
   link?: string;
   featured?: boolean;
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 export const projects: Project[] = [
@@ -41,5 +45,9 @@ export const projects: Project[] = [
     tools: ["AI Scoring", "CAN SLIM", "Market Research", "Stock Analysis"],
     link: "#",
     featured: true,
+    image: {
+      src: "/projects/canswim-investment-strategy-tool.svg",
+      alt: "Dark CANSWIM Investment dashboard showing stock rankings, CAN SLIM scores, and market pulse data",
+    },
   },
 ];

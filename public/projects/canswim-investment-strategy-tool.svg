@@ -1,0 +1,100 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">CANSWIM Investment Strategy Tool dashboard</title>
+  <desc id="desc">Dark market research dashboard with a left navigation rail, green Market Pulse header, stock ranking table, CAN SLIM scores, and decision-ready investment metrics.</desc>
+  <rect width="1600" height="900" fill="#0B0E0B"/>
+  <rect width="164" height="900" fill="#101411"/>
+  <rect x="12" y="20" width="18" height="18" rx="2" fill="#2BBF55"/>
+  <text x="42" y="35" fill="#98F6A6" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">MARKET PULSE</text>
+  <g fill="#7B857B" font-family="Inter, Arial, sans-serif" font-size="12">
+    <text x="26" y="82">Portfolio</text>
+    <text x="26" y="120">Market Pulse</text>
+    <text x="26" y="158">Market Movers</text>
+    <text x="26" y="196">Stock Scanner</text>
+    <text x="26" y="234">Daily CanSlim Scan</text>
+    <text x="26" y="272">MS Growth 250</text>
+    <text x="26" y="310">Minervini Screener</text>
+    <text x="26" y="348">Minervini List</text>
+    <text x="26" y="386">Watchlist</text>
+    <text x="26" y="424">ETF Screener</text>
+    <text x="26" y="462">Profit Taking</text>
+    <text x="26" y="500">Position Consolidator</text>
+    <text x="26" y="538">Risk Panel</text>
+  </g>
+  <rect x="0" y="64" width="164" height="36" fill="#142317"/>
+  <rect x="7" y="64" width="3" height="36" fill="#35C35C"/>
+  <text x="12" y="832" fill="#596159" font-family="Inter, Arial, sans-serif" font-size="10">SYSTEM STATUS</text>
+  <circle cx="19" cy="858" r="4" fill="#35C35C"/>
+  <text x="31" y="862" fill="#B7C4B8" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600">NODE_ONLINE</text>
+
+  <rect x="164" y="0" width="1436" height="76" fill="#0D100D"/>
+  <text x="326" y="36" fill="#DDE6D8" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="1.5">MARKET PULSE</text>
+  <rect x="448" y="24" width="110" height="10" rx="5" fill="#17351D"/>
+  <rect x="448" y="24" width="71" height="10" rx="5" fill="#39C85D"/>
+  <text x="568" y="33" fill="#8CED94" font-family="Inter, Arial, sans-serif" font-size="10">79% Bullish</text>
+  <rect x="788" y="18" width="340" height="32" rx="5" fill="#090B09" stroke="#1B211B"/>
+  <text x="812" y="39" fill="#535B53" font-family="Inter, Arial, sans-serif" font-size="11">Search symbol or name...</text>
+  <rect x="1150" y="18" width="96" height="32" rx="5" fill="#112015" stroke="#25472B"/>
+  <text x="1171" y="39" fill="#BDF8BD" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700">IMPORT</text>
+  <rect x="1390" y="18" width="88" height="32" rx="5" fill="#1B0F0E" stroke="#742D25"/>
+  <text x="1412" y="39" fill="#FF886F" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="700">Delete All</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="328" y="126" fill="#E6EEE3" font-size="11" font-weight="800">#</text>
+    <text x="366" y="126" fill="#E6EEE3" font-size="11" font-weight="800">CLS •</text>
+    <text x="438" y="126" fill="#E6EEE3" font-size="11" font-weight="800">Celebstric Inc.</text>
+    <text x="636" y="126" fill="#E6EEE3" font-size="11" font-weight="800">+7%</text>
+    <text x="724" y="126" fill="#E6EEE3" font-size="11" font-weight="800">PRICE</text>
+    <text x="858" y="126" fill="#E6EEE3" font-size="11" font-weight="800">MARKET</text>
+    <text x="976" y="126" fill="#E6EEE3" font-size="11" font-weight="800">BUY ZONE</text>
+    <text x="1160" y="126" fill="#E6EEE3" font-size="11" font-weight="800">INST %</text>
+    <text x="1274" y="126" fill="#E6EEE3" font-size="11" font-weight="800">PLANS</text>
+    <text x="1358" y="126" fill="#E6EEE3" font-size="11" font-weight="800">EPS RTD</text>
+    <text x="1450" y="126" fill="#E6EEE3" font-size="11" font-weight="800">RS RTD</text>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="12">
+    <g fill="#E2E8DC">
+      <text x="330" y="162">1</text><text x="366" y="162">SYMBO.L</text><text x="438" y="162">NAME 1</text><text x="716" y="162">$302.9</text><text x="1160" y="162">468% ‘</text><text x="1344" y="162">99</text><text x="1438" y="162">88 ‘</text>
+      <text x="330" y="202">2</text><text x="366" y="202">DHT</text><text x="438" y="202">DHT Holdings Inc.</text><text x="716" y="202">$19.80</text><text x="1160" y="202">52% ‘</text><text x="1344" y="202">96</text><text x="1438" y="202">90 ‘</text>
+      <text x="330" y="242">3</text><text x="366" y="242">JBL</text><text x="438" y="242">Jabil Inc.</text><text x="716" y="242">$855.15</text><text x="1160" y="242">56% ‘</text><text x="1344" y="242">93</text><text x="1438" y="242">93 ‘</text>
+      <text x="330" y="282">4</text><text x="366" y="282">GEV</text><text x="438" y="282">GE Vernova Inc.</text><text x="716" y="282">$1046.15</text><text x="1160" y="282">44% ‘</text><text x="1344" y="282">85</text><text x="1438" y="282">93 ‘</text>
+      <text x="330" y="322">5</text><text x="366" y="322">GOOG</text><text x="438" y="322">Alphabet Inc. Cl C</text><text x="716" y="322">$397.45</text><text x="1160" y="322">34% ‘</text><text x="1344" y="322">99</text><text x="1438" y="322">88 ‘</text>
+      <text x="330" y="362">6</text><text x="366" y="362">CRS</text><text x="438" y="362">Carpenter Technology Corp.</text><text x="716" y="362">$427.85</text><text x="1160" y="362">68% ‘</text><text x="1344" y="362">97</text><text x="1438" y="362">88 ‘</text>
+      <text x="330" y="402">7</text><text x="366" y="402">TSM</text><text x="438" y="402">Taiwan Semiconductor Manufacturing Co.</text><text x="716" y="402">$411.68</text><text x="1160" y="402">81% ‘</text><text x="1344" y="402">97</text><text x="1438" y="402">89 ‘</text>
+      <text x="330" y="442">8</text><text x="366" y="442">BELFB</text><text x="438" y="442">Bel Fuse Inc. Cl B</text><text x="716" y="442">$297.98</text><text x="1160" y="442">63% ‘</text><text x="1344" y="442">95</text><text x="1438" y="442">96 ‘</text>
+      <text x="330" y="482">9</text><text x="366" y="482">WFRD</text><text x="438" y="482">Weatherford International PLC</text><text x="716" y="482">$182.32</text><text x="1160" y="482">74% ‘</text><text x="1344" y="482">91</text><text x="1438" y="482">79 ‘</text>
+    </g>
+    <g fill="#49D46A" font-size="10" font-weight="700">
+      <rect x="636" y="148" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="160">+7%</text>
+      <rect x="636" y="188" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="200">+7%</text>
+      <rect x="636" y="228" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="240">+7%</text>
+      <rect x="636" y="268" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="280">+7%</text>
+      <rect x="636" y="308" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="320">+7%</text>
+      <rect x="636" y="348" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="360">+7%</text>
+      <rect x="636" y="388" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="400">+7%</text>
+      <rect x="636" y="428" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="440">+7%</text>
+      <rect x="636" y="468" width="34" height="16" rx="8" fill="#133D20"/><text x="644" y="480">+7%</text>
+    </g>
+    <g stroke="#293029">
+      <line x1="316" y1="174" x2="1510" y2="174"/>
+      <line x1="316" y1="214" x2="1510" y2="214"/>
+      <line x1="316" y1="254" x2="1510" y2="254"/>
+      <line x1="316" y1="294" x2="1510" y2="294"/>
+      <line x1="316" y1="334" x2="1510" y2="334"/>
+      <line x1="316" y1="374" x2="1510" y2="374"/>
+      <line x1="316" y1="414" x2="1510" y2="414"/>
+      <line x1="316" y1="454" x2="1510" y2="454"/>
+      <line x1="316" y1="494" x2="1510" y2="494"/>
+    </g>
+  </g>
+
+  <text x="1394" y="852" fill="#A7B2A3" font-family="Inter, Arial, sans-serif" font-size="10">Last synced 5:43:52 PM</text>
+  <rect x="164" y="76" width="1436" height="824" fill="url(#fade)"/>
+  <defs>
+    <linearGradient id="fade" x1="882" y1="76" x2="882" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="0.75" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0.22"/>
+    </linearGradient>
+  </defs>
+</svg>
