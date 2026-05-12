@@ -18,11 +18,11 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
       initial={{ opacity: 0, y: 32 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.65, delay: 0.05 }}
-      className={`flex flex-col ${imageLeft ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-8 md:gap-14`}
+      className={`flex flex-col ${imageLeft ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 md:gap-16`}
     >
       {/* Image */}
-      <div className="w-full md:w-[45%] flex-shrink-0">
-        <div className="relative group">
+      <div className="w-full md:flex-1 min-w-0 flex justify-center px-4 md:px-6">
+        <div className="relative group max-w-[680px] w-full">
           <div
             className="absolute -inset-3 rounded-[20px] opacity-0 group-hover:opacity-60 transition-opacity duration-500"
             style={{
@@ -39,7 +39,7 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
               alt={project.title}
               width={680}
               height={440}
-              className="w-full h-[260px] sm:h-[320px] md:h-[380px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              className="w-full h-[260px] sm:h-[320px] md:h-[420px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
             />
             <div
               className="absolute inset-0"
@@ -52,7 +52,7 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
       </div>
 
       {/* Text */}
-      <div className={`w-full md:w-[55%] flex flex-col gap-5 ${imageLeft ? "md:items-start" : "md:items-start"} items-center text-center md:text-left`}>
+      <div className="w-full md:flex-1 min-w-0 flex flex-col items-center justify-center text-center gap-4 px-4 md:px-6 py-4">
         <p className="text-xs font-medium text-[#C9A84C] uppercase tracking-[0.2em]">
           {project.category}
         </p>
@@ -64,13 +64,13 @@ function ProjectRow({ project, index }: { project: typeof projects[0]; index: nu
           {project.title}
         </h3>
 
-        <div className="w-24 h-px bg-gradient-to-r from-[rgba(201,168,76,0.4)] to-transparent" />
+        <div className="w-24 h-px bg-gradient-to-r from-transparent via-[rgba(201,168,76,0.4)] to-transparent" />
 
-        <p className="text-[#9A9080] leading-[1.85] text-base max-w-lg">
+        <p className="text-[#9A9080] leading-[1.85] text-base w-full max-w-[520px]">
           {project.description}
         </p>
 
-        <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+        <div className="flex flex-wrap gap-2 justify-center">
           {project.tools.map((tool) => (
             <Badge key={tool} variant="muted">{tool}</Badge>
           ))}
@@ -97,9 +97,10 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6">
-      <div className="max-w-6xl mx-auto">
-        <div ref={ref} className="mb-16">
+    <section id="projects" className="py-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        {/* Section heading */}
+        <div ref={ref} className="mb-16 text-center">
           <motion.p
             className="text-xs font-medium text-[#C9A84C] mb-2 uppercase tracking-[0.2em]"
             initial={{ opacity: 0, y: 12 }}
@@ -119,7 +120,7 @@ export default function Projects() {
           </motion.h2>
         </div>
 
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-28">
           {projects.map((project, i) => (
             <ProjectRow key={project.id} project={project} index={i} />
           ))}
