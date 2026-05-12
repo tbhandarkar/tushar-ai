@@ -1,36 +1,41 @@
 export interface Project {
   id: string;
   title: string;
+  category: string;
   description: string;
   tools: string[];
+  image: string;
   link?: string;
-  featured?: boolean;
 }
 
 export const projects: Project[] = [
   {
-    id: "ai-email-automation",
-    title: "AI Email Automation Pipeline",
+    id: "canswim",
+    title: "CanSwim Investment OS",
+    category: "Desktop App · Investment Research",
     description:
-      "Built an end-to-end email triage and response automation using Zapier and Claude AI. The pipeline categorises incoming emails, drafts context-aware replies, and routes high-priority messages to a Notion dashboard — cutting manual email time by ~70%.",
-    tools: ["Zapier", "Claude", "Notion AI", "Gmail API"],
-    link: "#",
-    featured: true,
+      "Turns complex market research into clean, decision-ready insights. An AI-driven engine scores every stock across seven proven CAN SLIM factors and adapts instantly to real-time market conditions — built for disciplined, self-directed investors who want to identify true leadership setups and filter out weak ideas fast.",
+    tools: ["CAN SLIM", "AI Scoring Engine", "Stock Analysis", "Desktop App"],
+    image: "/images/canswim.png",
   },
   {
-    id: "prompt-library",
-    title: "Enterprise Prompt Engineering Library",
+    id: "dj-booking",
+    title: "DJ Rohan — Event Booking Platform",
+    category: "Web App · Entertainment",
     description:
-      "Designed and documented a reusable library of 50+ production-grade prompts for common business workflows — including summarisation, data extraction, meeting notes, and content generation — tested across ChatGPT, Gemini, and Claude.",
-    tools: ["ChatGPT", "Gemini", "Claude", "Notion AI", "Perplexity"],
-    link: "#",
+      "A full event booking website for DJ Rohan Bhandarkar, featuring a video showcase, event inquiry flow, and a portfolio of past performances. Built to convert visitors into bookings with a high-energy visual design.",
+    tools: ["Next.js", "Netlify", "Video Integration", "Booking Flow"],
+    image: "/images/rohan-dj.png",
+    link: "https://djrohanbhandarkar.netlify.app/",
   },
   {
-    id: "data-insights-bot",
-    title: "Natural Language Data Insights Bot",
+    id: "travel-planner",
+    title: "AI Travel Planner",
+    category: "Web App · AI Tool",
     description:
-      "Connected Google Sheets to an LLM via SuperJoin and Plot AI to create a plain-English querying interface. Business users can ask questions like 'What were sales last quarter?' and receive charts and summaries without writing a single formula.",
-    tools: ["SuperJoin", "Plot AI", "Google AI Studio", "Hugging Face"],
-    link: "#",
+      "An AI-powered travel planning tool that generates personalised itineraries based on destination, duration, and travel style. Replaces hours of research with a single conversation-driven interface.",
+    tools: ["AI Itinerary", "LLM Integration", "Vercel", "Travel UX"],
+    image: "/images/travel-planner.png",
+    link: "https://travel-planner-plan.vercel.app/",
   },
 ];
